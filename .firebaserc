@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "verb-list-practice",
+    "verb-list-practice": "verb-list-practice"
+  }
+}
