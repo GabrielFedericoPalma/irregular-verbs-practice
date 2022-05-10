@@ -1,89 +1,32 @@
 <template>
 
 <div>
-
-<div class="pagination" >
-<q-pagination
-      v-model="indexNumber"
-      :max="ABCIndexLength"
-      direction-links
-      boundary-links
-      icon-first="skip_previous"
-      icon-last="skip_next"
-      icon-prev="fast_rewind"
-      icon-next="fast_forward"
-      @click="clickOnABCIndex()"
-    />
-    <div class="q-ma-md" >
-      <router-link to="/practice" >
-        <q-btn label="Practice" class="text-white bg-dark" />
-      </router-link>
-      <router-link to="/exam" >
-        <q-btn label="Exam" color="secondary" />
-      </router-link>
-      <router-link to="/result" >
-        <q-btn label="Results" color="secondary" />
-      </router-link>
-    </div>
-</div>
      
 <q-page padding >
 
 <div class="q-pa-md" style="max-width: 800px; margin:auto; padding-bottom: 60px">
+      
+      <!-- RESULT -->
+      <div>
 
-        <div class="title">
-            <img src="images/flags.jpg" alt="Flag" style="max-width:180px; margin-bottom:16px" >
-        <h4 class="text-center" style="margin:0" >IRREGULAR VERBS</h4>
-            <h6 style="text-align:center;margin:0" >PRACTICE</h6>
-            <!-- <q-icon name="translate" style="font-size:22px" /> -->
-        </div>
+          {{dataResult}}
 
-        <div v-for="(item, index) in verbList" :key="index" >
+          <div v-for="(item, index) in dataResult" :key="index" >
 
-          <h5 class="text-center" ><span class="text-uppercase" >{{item.INFINITIVE}}</span><span v-if="item.SPANISH" > - <em class="text-lowercase" style="font-size:16px; color: #8b5353" >{{item.SPANISH}}</em></span></h5>
-
-          <q-input
-            ref="input"
-            filled
-            value=""
-            v-model="modelInput['infinitive'+index]"
-            label="INFINITIVE"
-            :rules="[ val => val.toLowerCase() == item.INFINITIVE ]"
-          />
+            <h5 class="text-center" style="margin-bottom: 6px" >
+              <span><q-icon name="volume_up" color="secondary" /><a href="#" @click.prevent="voice($event)" class="text-uppercase" >{{item.INFINITIVE}}</a></span>
+              <span v-if="item.SPANISH" > - <em class="text-lowercase" style="font-size:16px; color: #8b5353" >{{item.SPANISH}}</em></span>
+            </h5>
+            
+            <aside>
+              <h6><q-icon name="volume_up" color="secondary" /><a href="#" @click.prevent="voice($event)" >{{item.PAST}}</a></h6>
+              <h6><q-icon name="volume_up" color="secondary" /><a href="#" @click.prevent="voice($event)" >{{item.PARTICIPLE}}</a></h6>
+            </aside>
           
-          <q-input
-            ref="input"
-            filled
-            value=""
-            v-model="modelInput['past'+index]"
-            label="PAST"
-            :rules="[ val => val.toLowerCase() == item.PAST ]"
-          />
-          
-          <q-input
-            ref="input"
-            filled
-            value=""
-            v-model="modelInput['participle'+index]"
-            label="PARTICIPLE"
-            :rules="[ val => val.toLowerCase() == item.PARTICIPLE]"
-          />
-
-          <div style="width:100%; display:flex; justify-content: flex-end" >
-            <div>
-              <small style="display:inline-block; margin-right:33px;color: #8b5353;font-size: 14px;" v-if="answer==index" >{{item.INFINITIVE}} - {{item.PAST}} - {{item.PARTICIPLE}}</small>
-              <q-btn label="answer" @click="toggleAnswer(index)" />
-            </div>
-          </div>
-
         </div>
-
-        <!-- bottons go/back -->
-        <!-- <div style="width:100%; display:flex; justify-content: space-between; margin-top:60px" >  
-            <q-btn label="back" @click="goBack('back')" />
-            <q-btn label="go" @click="goBack('go')" />
-        </div> -->
-
+      </div>
+      <!-- END RESULT -->
+      
   </div>
 
   </q-page>

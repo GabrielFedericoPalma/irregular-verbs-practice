@@ -45,8 +45,10 @@ export function firebaseToStore (state, data) {
 
 }
 
-export function saveDataToResult (state){
-  console.log('state.verbList: ',state.verbList)
+export function saveDataToResult (state, data){
+  // console.log('state.verbList: ',state.verbList)
+  state.dataResult.push(data)
+  // console.log('state.dataResult: ',state.dataResult)
 }
 
 export function pagination (state, to) {

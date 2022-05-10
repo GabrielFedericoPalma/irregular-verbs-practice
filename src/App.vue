@@ -10,7 +10,7 @@ import { db} from 'boot/firebase.js';
 import { LoadingBar } from 'quasar';
 
 LoadingBar.setDefaults({
-  color: 'secondary',
+  color: 'primary',
   size: '10px',
   position: 'bottom'
 })

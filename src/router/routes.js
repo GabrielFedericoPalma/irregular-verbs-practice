@@ -4,10 +4,10 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') },
-      { path: '/practice', component: () => import('pages/Index.vue') },
-      { path: '/exam', component: () => import('pages/Index.vue') },
-      { path: '/results', component: () => import('pages/results.vue') }
+      { path: '', component: () => import('src/pages/practice.vue') },
+      { path: '/exam', component: () => import('src/pages/exam.vue') },
+      { path: '/results', component: () => import('src/pages/results.vue') },
+      { path: '/verb-list', component: () => import('src/pages/verblist.vue') }
     ]
   },
 
