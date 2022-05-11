@@ -7,7 +7,7 @@
       </q-toolbar>
         <!-- <img src="images/flags.jpg" alt="Flag" style="max-width:180px; margin-bottom:16px" > -->
         <h1>IRREGULAR VERBS<br/><span>Practice</span></h1>
-        <p>V 2.0.1</p>
+        <p>V 2.0.2</p>
     </q-header>
 
    <!-- ***** MENU LATERAL ***** -->
@@ -25,7 +25,7 @@
           </q-item>
         </router-link>
 
-        <router-link to="/exam" >
+        <!-- <router-link to="/exam" >
           <q-item clickable  >
           <q-item-section avatar >
             <q-icon name="format_list_numbered" />
@@ -45,7 +45,7 @@
               <q-item-label class="text-uppercase" >RESULTS</q-item-label>
             </q-item-section>
           </q-item>
-        </router-link>
+        </router-link> -->
 
         <router-link to="/verb-list" >
           <q-item clickable  >
@@ -105,17 +105,17 @@ export default {
         let index = this.indexNumber -1
         let to = this.ABCIndex[index]
 
-        console.log('modelInput: ', this.modelInput)
-        console.log('verbList: ', this.verbList)
+        // console.log('modelInput: ', this.modelInput)
+        // console.log('verbList: ', this.verbList)
 
-        if(this.activeLink=='exam'){
-          this.$store.commit('firebase_store/saveDataToResult', this.verbList)
-        }
+        // if(this.activeLink=='exam'){
+        //   this.$store.commit('firebase_store/saveDataToResult', this.verbList)
+        // }
 
         this.$store.commit('firebase_store/pagination', to)
         window.scrollTo(0, 0);
-        this.answer = -1
-        this.modelInput = {}
+        // this.answer = -1
+        // this.modelInput = {}
     }
   },
   computed: {

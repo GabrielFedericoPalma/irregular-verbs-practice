@@ -4,14 +4,14 @@
 
 <div class="q-pa-md" style="max-width: 800px; margin:auto; padding-bottom: 60px">
 
-<p class="text-center" >Write the verbs in the correct form.<br/>Tap/click the text to listen it.</p>
+<!-- <p class="text-center" >Write the verbs in the correct form.<br/>Tap/click the text to listen it.</p> -->
 
         <!-- PRACTICE -->
         <div v-for="(item, index) in verbList" :key="index" >
 
           <h5 class="text-center" >
             <span class="text-uppercase" >
-              <q-icon name="volume_up" color="primary" /><a href="#" @click.prevent="voice($event)" class="text-uppercase" title="Listen it" >{{item.INFINITIVE}}</a>
+              <q-icon name="volume_up" color="primary" @click="alert()" /><a href="#" @click.prevent="voice($event)" class="text-uppercase" title="Listen it" >{{item.INFINITIVE}}</a>
               </span><span v-if="item.SPANISH" > - <em class="text-lowercase" >{{item.SPANISH}}</em></span></h5>
 
               <q-input
@@ -47,7 +47,7 @@
               <div style="width:100%; display:flex; justify-content: flex-end" >
                 <div>
                   <small style="display:inline-block; margin-right:33px;color: #8b5353;font-size: 14px;" v-if="answer==index" >
-                    <q-icon name="volume_up" color="primary" /><a href="#" @click.prevent="voice($event)" title="Listen it" >{{item.INFINITIVE}} - {{item.PAST}} - {{item.PARTICIPLE}}</a>
+                    <q-icon name="volume_up" color="primary" @click="alert()" /><a href="#" @click.prevent="voice($event)" title="Listen it" >{{item.INFINITIVE}} - {{item.PAST}} - {{item.PARTICIPLE}}</a>
                   </small>
                   <q-btn label="answer" color="primary" @click="toggleAnswer(index)" />
                 </div>
@@ -83,11 +83,15 @@ export default {
     
   },
   methods: {
+    alert(){
+      alert('Click the text to listen it')
+    },
     voice($event){
       let text = $event.target.innerText
       let speech = new SpeechSynthesisUtterance()
       speech.lang = "en"
       speech.text = text
+      speech.rate = 0.7
       window.speechSynthesis.speak(speech);
     },
     toggleAnswer(index){
@@ -97,9 +101,6 @@ export default {
       }else{
         this.answer = index
       }     
-    },
-    handlerFocus(){
-      console.log('FOCUS')
     }
   },
   computed: {
@@ -108,7 +109,6 @@ export default {
         return this.$store.state.firebase_store.verbList
       }
     }
-  },
-
+  }
 }
 </script>

@@ -4,7 +4,7 @@
 
 <div class="q-pa-md" style="max-width: 800px; margin:auto; padding-bottom: 60px">
 
-<p class="text-center" >Tap/click the text to listen it</p>
+<!-- <p class="text-center" >Tap/click the text to listen it</p> -->
 
     <!-- VERB LIST -->
       <div v-for="(item, index) in verbList" :key="index" >
@@ -12,12 +12,12 @@
           <aside>
 
             <h5>
-              <span><q-icon name="volume_up" color="primary" /><a href="#" @click.prevent="voice($event)" class="text-uppercase" title="Listen it" >{{item.INFINITIVE}}</a></span>
+              <span><q-icon name="volume_up" color="primary" @click="alert()" /><a href="#" @click.prevent="voice($event)" class="text-uppercase" title="Listen it" >{{item.INFINITIVE}}</a></span>
               <span v-if="item.SPANISH" > - <em class="text-lowercase" >{{item.SPANISH}}</em></span>
             </h5>
 
-            <h6><q-icon name="volume_up" color="primary" /><a href="#" @click.prevent="voice($event)" title="Listen it" >{{item.PAST}}</a></h6>
-            <h6><q-icon name="volume_up" color="primary" /><a href="#" @click.prevent="voice($event)" title="Listen it" >{{item.PARTICIPLE}}</a></h6>
+            <h6><q-icon name="volume_up" color="primary" @click="alert()" /><a href="#" @click.prevent="voice($event)" title="Listen it" >{{item.PAST}}</a></h6>
+            <h6><q-icon name="volume_up" color="primary" @click="alert()" /><a href="#" @click.prevent="voice($event)" title="Listen it" >{{item.PARTICIPLE}}</a></h6>
           
           </aside>
         
@@ -41,6 +41,9 @@ export default {
     // this.verbListLocal = {...this.verbList}
   },
   methods: {
+    alert(){
+      alert('Click the text to listen it')
+    },
     voice($event){
 
       let text = $event.target.innerText
@@ -49,7 +52,7 @@ export default {
       let speech = new SpeechSynthesisUtterance()
       speech.lang = "en"
       speech.text = text
-
+      speech.rate = 0.7
       window.speechSynthesis.speak(speech);
 
     }

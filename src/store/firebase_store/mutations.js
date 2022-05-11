@@ -1,7 +1,7 @@
 import state from "./state";
 
 export function firebaseToStore (state, data) {
-  console.log('datae: ',data)
+  // console.log('datae: ',data)
 
   if(data==''){
     data = state.dataCache
