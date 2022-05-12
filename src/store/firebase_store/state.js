@@ -4,6 +4,7 @@ export default function () {
     dataGlobal: [],
     verbList: [],
     dataResult: [],
-    dataFirstLetters: null,    
+    dataFirstLetters: null,
+    update: false    
   }
 }

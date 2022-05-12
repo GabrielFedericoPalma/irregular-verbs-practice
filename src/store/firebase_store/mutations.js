@@ -86,4 +86,6 @@ export function pagination (state, to) {
 
 }
 
-
+export function update (state, boolean) {
+  state.update = boolean
+}

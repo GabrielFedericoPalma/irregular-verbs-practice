@@ -113,7 +113,7 @@ module.exports = function (/* ctx */) {
       manifest: {
         name: `irregular_verbs_practice`,
         short_name: `irregular_verbs_practice`,
-        description: `Carta digital online`,
+        description: `irregular_verbs_practice`,
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',

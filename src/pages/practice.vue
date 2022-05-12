@@ -109,6 +109,15 @@ export default {
         return this.$store.state.firebase_store.verbList
       }
     }
+  },
+  updated(){
+    
+    if(this.$store.state.firebase_store.update){
+        this.modelInput = {}
+        this.answer = -1
+        this.$store.commit('firebase_store/update', false)
+    }
+
   }
 }
 </script>

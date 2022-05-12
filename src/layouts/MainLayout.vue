@@ -7,7 +7,7 @@
       </q-toolbar>
         <!-- <img src="images/flags.jpg" alt="Flag" style="max-width:180px; margin-bottom:16px" > -->
         <h1>IRREGULAR VERBS<br/><span>Practice</span></h1>
-        <p>V 2.0.2</p>
+        <p>V 2.0.3</p>
     </q-header>
 
    <!-- ***** MENU LATERAL ***** -->
@@ -102,6 +102,9 @@ export default {
   },
   methods: {
     clickOnABCIndex(){
+
+        this.$store.commit('firebase_store/update',true)
+
         let index = this.indexNumber -1
         let to = this.ABCIndex[index]
 
