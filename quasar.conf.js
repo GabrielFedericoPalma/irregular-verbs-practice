@@ -112,8 +112,8 @@ module.exports = function (/* ctx */) {
       workboxOptions: {}, // only for GenerateSW
       manifest: {
         name: `irregular_verbs_practice`,
-        short_name: `irregular_verbs_practice`,
-        description: `irregular_verbs_practice`,
+        short_name: `Verbos irregulares`,
+        description: `Practica en Ingles`,
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',

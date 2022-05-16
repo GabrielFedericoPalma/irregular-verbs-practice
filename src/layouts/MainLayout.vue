@@ -7,13 +7,25 @@
       </q-toolbar>
         <!-- <img src="images/flags.jpg" alt="Flag" style="max-width:180px; margin-bottom:16px" > -->
         <h1>IRREGULAR VERBS<br/><span>Practice</span></h1>
-        <p>V 2.0.3</p>
+        <p>V 2.0.4</p>
     </q-header>
 
    <!-- ***** MENU LATERAL ***** -->
   <q-drawer v-model="drawer" show-if-above bordered class="bg-grey-1" >
         
       <q-list style="padding-top:33px" >
+
+        <router-link to="/" >
+          <q-item clickable  >
+          <q-item-section avatar >
+            <q-icon name="list" />
+          </q-item-section>
+            <q-item-section>
+              <q-item-label class="text-uppercase" >VERB LIST</q-item-label>
+            </q-item-section>
+          </q-item>
+        </router-link>
+
         <router-link to="/" >
           <q-item clickable >
           <q-item-section avatar >
@@ -46,17 +58,6 @@
             </q-item-section>
           </q-item>
         </router-link> -->
-
-        <router-link to="/verb-list" >
-          <q-item clickable  >
-          <q-item-section avatar >
-            <q-icon name="list" />
-          </q-item-section>
-            <q-item-section>
-              <q-item-label class="text-uppercase" >VERB LIST</q-item-label>
-            </q-item-section>
-          </q-item>
-        </router-link>
 
       </q-list>
       
