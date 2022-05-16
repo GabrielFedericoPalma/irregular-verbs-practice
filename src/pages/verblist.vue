@@ -4,7 +4,7 @@
 
 <div class="q-pa-md" style="max-width: 800px; margin:auto; padding-bottom: 60px">
 
-<!-- <p class="text-center" >Tap/click the text to listen it</p> -->
+<p class="text-center" >Verb list</p>
 
     <!-- VERB LIST -->
       <div v-for="(item, index) in verbList" :key="index" >

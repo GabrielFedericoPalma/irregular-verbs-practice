@@ -4,7 +4,7 @@
 
 <div class="q-pa-md" style="max-width: 800px; margin:auto; padding-bottom: 60px">
 
-<!-- <p class="text-center" >Write the verbs in the correct form.<br/>Tap/click the text to listen it.</p> -->
+<p class="text-center" >Practice</p>
 
         <!-- PRACTICE -->
         <div v-for="(item, index) in verbList" :key="index" >
