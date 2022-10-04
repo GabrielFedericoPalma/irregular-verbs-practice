@@ -7,7 +7,7 @@
       </q-toolbar>
         <!-- <img src="images/flags.jpg" alt="Flag" style="max-width:180px; margin-bottom:16px" > -->
         <h1>IRREGULAR VERBS<br/><span>Practice</span></h1>
-        <p>V 2.0.4</p>
+        <p>V 1.0.0</p>
     </q-header>
 
    <!-- ***** MENU LATERAL ***** -->
@@ -26,7 +26,7 @@
           </q-item>
         </router-link>
 
-        <router-link to="/" >
+        <router-link to="/practice" >
           <q-item clickable >
           <q-item-section avatar >
             <q-icon name="edit_note" />
